@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    // Name must match Manage Jenkins -> Tools -> NodeJS
-    tools {
-        nodejs 'node-lts'
-    }
-
     environment {
         CI = 'true'
         PLAYWRIGHT_JUNIT_OUTPUT_NAME = 'junit-results.xml'
@@ -14,6 +9,7 @@ pipeline {
     stages {
         stage('Install') {
             steps {
+                bat 'node -v'
                 bat 'npm ci'
                 bat 'npx playwright install chromium'
             }
