@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-console.log("Hii  Team , HOW are YOU Team ?")
+console.log("Hii  Team , HOW are YOU  Team ?")
 test('has title', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
